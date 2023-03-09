@@ -1,0 +1,147 @@
+@import "/styles/modules/mixins";
+
+// slider
+.slider {
+  .slick-list {
+    margin: 0 -5px;
+  }
+  .slick-slide {
+    > div {
+      position: relative;
+      margin: 0 5px;
+      height: 300px;
+      padding: 0 15px;
+      border: 1px solid #fff;
+    }
+
+    &:hover .hover-item {
+      opacity: 1;
+      .text p {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .default-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    padding: 0 15px;
+    transition: 0s;
+    h3 {
+      font-size: 16px;
+    }
+  }
+
+  .hover-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: all 0.5s ease-out;
+
+    .text {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p {
+        opacity: 0;
+        padding: 0 20px;
+        font-weight: 600;
+        font-size: 16px;
+        text-align: left;
+        transform: translateX(-40px);
+        transition: all 0.5s ease-out 0.1s;
+      }
+      span {
+        margin-top: 5px;
+        display: inline-block;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.project {
+  .slider {
+    .slick-arrow {
+      top: -80px;
+      width: 64px;
+      height: 64px;
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+      }
+    }
+
+    .slick-next {
+      right: 0;
+    }
+    .slick-prev {
+      left: 80%;
+    }
+
+    .slick-prev::before {
+      background: url(../assets/icons/icon-arrow-left.png) center center
+        no-repeat;
+    }
+    .slick-next::before {
+      background: url(../assets/icons/icon-arrow-right.png) center center
+        no-repeat;
+    }
+  }
+}
+
+@include mq(tablet) {
+  .sub-title {
+    margin-bottom: 50px;
+    font-size: 40px;
+  }
+
+  .timeline {
+    padding: 0 20px;
+    margin-top: 30px;
+  }
+
+  .history .section .timeline p {
+    font-size: 16px;
+  }
+  .history .section .timeline span {
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  .history .section .history-item h3 {
+    font-size: 22px;
+  }
+
+  .project .slider .slick-arrow {
+    width: 32px;
+    height: 32px;
+  }
+  .project .slider .slick-arrow::before {
+    width: 32px;
+    height: 32px;
+  }
+  .project .slider .slick-prev::before {
+    background: url(../assets/icons/icon-arrow-left_m.png) center center
+      no-repeat;
+  }
+  .project .slider .slick-next::before {
+    background: url(../assets/icons/icon-arrow-right_m.png) center center
+      no-repeat;
+  }
+}

@@ -1,0 +1,22 @@
+$devices: (
+  phone: 480px,
+  mobile: 767px,
+  tablet: 768px,
+  tabletL: 820px,
+  underDesktop: 1024px,
+  desktop: 1200px,
+  maxDesktop: 1980px,
+);
+
+@mixin mq($device) {
+  @if map-has-key($devices, $device) {
+    $device-width: map-get($devices, $device);
+    @media screen and (max-width: #{$device-width}) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-width: $device) {
+      @content;
+    }
+  }
+}

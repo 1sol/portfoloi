@@ -1,0 +1,144 @@
+@import "/styles/modules/mixins";
+
+.title {
+  font-size: 30px;
+}
+
+.sub-title {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.ant-col {
+  margin: 0 auto;
+}
+
+// antd timeline
+.ant-timeline {
+  display: flex;
+  width: 100%;
+}
+
+.section .ant-timeline.ant-timeline-label .ant-timeline-item-label {
+  width: auto;
+  top: -15px;
+  left: 0;
+  padding-bottom: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #6fb8b7;
+}
+
+.section .ant-timeline-item {
+  width: calc(100% / 5);
+}
+
+.section .ant-timeline-item-content {
+  margin: 0;
+  padding-top: 80px;
+  position: inherit;
+}
+
+.section .ant-timeline.ant-timeline-label .ant-timeline-item-tail {
+  width: 100%;
+  left: 0;
+  top: 54px;
+  height: 2px;
+  border: 1px solid #f0f0f0;
+}
+
+.section .ant-timeline.ant-timeline-label .ant-timeline-item-head {
+  top: 50px;
+  left: 0;
+}
+
+.section .ant-timeline-item-last .ant-timeline-item-tail {
+  display: block;
+}
+
+.section .ant-timeline-item-head {
+  margin-left: 0;
+  background-color: #6fb8b7;
+  color: #6fb8b7;
+  border-color: #6fb8b7;
+}
+
+.section .ant-timeline::before {
+  content: "";
+  display: inline-block;
+  width: 133px;
+  height: 2px;
+  margin-top: 54px;
+  border: 1px solid #f0f0f0;
+}
+
+// antd progress
+.section .ant-progress-bg {
+  background-image: linear-gradient(to right, #84e5cf, #6fb8b7) !important;
+}
+
+// antd tag
+.section .ant-tag {
+  height: 35px;
+  padding: 5px 15px;
+  margin: 0 5px 10px 0;
+  background: #ebebeb;
+  border: 1px solid #f5f5f5;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  font-size: 13px;
+}
+
+.about-tag.tag .ant-tag {
+  margin: 0 10px 10px 0;
+  background: transparent;
+  border: 2px solid #f5f5f5;
+  font-size: 14px;
+  height: 40px;
+  padding: 8px 15px;
+  font-weight: bold;
+  color: #fff;
+  &:hover {
+    background-color: #6fb899;
+  }
+}
+
+@include mq(tablet) {
+  .ant-timeline {
+    display: block;
+  }
+
+  .ant-timeline {
+    text-align: center;
+  }
+  .section .ant-timeline-item-content {
+    padding-top: 45px;
+  }
+  .section .ant-timeline.ant-timeline-label .ant-timeline-item-label {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 22px;
+  }
+
+  .section .ant-timeline-item {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+  .section .ant-timeline::before {
+    display: none;
+  }
+
+  .section .ant-timeline.ant-timeline-label .ant-timeline-item-tail {
+    display: none;
+  }
+  .section .ant-timeline.ant-timeline-label .ant-timeline-item-head {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .section .ant-timeline.ant-timeline-label .ant-timeline-item-label {
+    font-size: 23px;
+  }
+}
